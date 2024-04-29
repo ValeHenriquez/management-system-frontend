@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false)
 
   const onSubmit = (data: LoginFormProps) => {
-    //TODO: handle login
+    //TODO: implement login logic
     alert(JSON.stringify(data))
     router.push('/')
   }
@@ -34,15 +34,15 @@ const LoginForm: React.FC = () => {
     <div className="flex h-full flex-col items-center justify-start">
       <Image src="/img/ucn-logo.png" alt="UCN Logo" width={160} height={100} />
 
-      <h1 className="text-grey-base mb-16 mt-14 flex text-3xl font-semibold">
+      <h1 className="mb-16 mt-14 flex text-3xl font-semibold text-grey-base">
         Acceder
       </h1>
 
-      <div className="border-grey-base/10 mb-8 w-2/3 border-b-2"></div>
+      <div className="mb-8 w-2/3 border-b-2 border-grey-base/10"></div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="w-2/3">
         <div className="mb-4 flex flex-col">
-          <label htmlFor="email" className="text-grey-base/50 text-sm">
+          <label htmlFor="email" className="text-sm text-grey-base/50">
             Ingrese su correo o rut
           </label>
           <input
@@ -53,7 +53,7 @@ const LoginForm: React.FC = () => {
             type="email"
             name="email"
             id="email"
-            className="border-grey-base rounded-lg border bg-white p-2"
+            className="rounded-lg border border-grey-base bg-white p-2"
           />
 
           {errors.email && (
@@ -63,7 +63,7 @@ const LoginForm: React.FC = () => {
           )}
         </div>
         <div className="flex flex-col">
-          <label htmlFor="password" className="text-grey-base/50 text-sm">
+          <label htmlFor="password" className="text-sm text-grey-base/50">
             Ingrese su contraseña
           </label>
           <input
@@ -93,23 +93,23 @@ const LoginForm: React.FC = () => {
         <div className="mt-8 flex w-full flex-col items-center justify-center sm:mt-16">
           <a
             href="/forgot-password"
-            className=" text-orange-base mt-2 underline"
+            className=" mt-2 text-orange-base underline"
           >
             ¿Olvidó su nombre de usuario o contraseña?
           </a>
 
           <button
             type="submit"
-            className="bg-orange-base mb-8 mt-8 w-2/5 p-2 text-white sm:mb-0 "
+            className="mb-8 mt-8 w-2/5 bg-orange-base p-2 text-white sm:mb-0 "
           >
             Acceder
           </button>
         </div>
       </form>
 
-      <p className="text-grey-base mb-4 mt-auto flex w-full items-center justify-center text-sm">
+      <p className="mb-4 mt-auto flex w-full items-center justify-center text-sm text-grey-base">
         No tienes una cuenta?
-        <a href="/signup" className="text-grey-base mx-1 underline">
+        <a href="/signup" className="mx-1 text-grey-base underline">
           Registro
         </a>
       </p>
