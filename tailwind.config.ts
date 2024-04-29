@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         'blue-base': '#003057',
         'orange-base': '#DB6E59',
-        'gray-base': '#333333',
+        'grey-base': '#333333',
       },
     },
   },
