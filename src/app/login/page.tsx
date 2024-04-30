@@ -1,9 +1,11 @@
+'use client'
 import React from 'react'
 import LoginForm from '../../components/LoginForm'
 import Image from 'next/image'
 
 const Login = () => {
-  //TODO: FIX RESPONSIVE, image is not responsive
+  //TODO: Do not show login page if user is already logged in
+
   return (
     <div className="flex flex-col sm:flex-row">
       <div className="relative h-screen w-full sm:w-1/2">
