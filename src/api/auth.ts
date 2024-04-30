@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+//TODO: handle timeout and retries
+
 const baseURL = process.env.NEXT_PUBLIC_BACK_URL || 'http://localhost:10000'
 
 export const login = async (email: string, password: string) => {

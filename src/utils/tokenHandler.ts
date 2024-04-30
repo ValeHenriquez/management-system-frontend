@@ -21,6 +21,7 @@ const tokenHandler = {
     return token
   },
 
+  //TODO: Implement removeToken in a logout() function 
   removeToken: () => {
     cookies().delete('token')
   },
