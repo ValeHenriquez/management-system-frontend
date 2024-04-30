@@ -1,19 +1,21 @@
+'use client'
 import React from 'react'
 import LoginForm from '../../components/LoginForm'
 import Image from 'next/image'
 
 const Login = () => {
-  //TODO: FIX RESPONSIVE, image is not responsive
+  //TODO: Do not show login page if user is already logged in
+
   return (
     <div className="flex flex-col sm:flex-row">
       <div className="relative h-screen w-full sm:w-1/2">
         <Image
           src="/img/ucn-bg.png"
           alt="ucn-background"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          className="h-full w-full"
+          fill
+          priority
+          sizes="100vw 100vh"
+          className="h-full w-full object-cover"
         />
         <div className="z-50 flex h-screen flex-col items-center justify-center">
           <span className="flex w-3/5 pb-6 text-center text-3xl font-bold text-white drop-shadow-xl  sm:text-3xl md:text-4xl">

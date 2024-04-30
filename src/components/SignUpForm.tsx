@@ -1,7 +1,10 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
+import { signup } from '../api/auth'
+import Error from './basics/Error'
+import Loading from './basics/Loading'
 
 type RegisterFormProps = {
   name: string
@@ -19,11 +22,30 @@ const SignUpForm: React.FC = () => {
     formState: { errors },
   } = useForm<RegisterFormProps>()
 
-  const onSubmit = (data: RegisterFormProps) => {
-    //TODO: implement signup logic
-    alert(JSON.stringify(data))
-    router.push('/login')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const onSubmit = async (data: RegisterFormProps) => {
+    setError('')
+    setLoading(true)
+    try {
+      await signup(
+        data.name,
+        data.lastName,
+        data.email,
+        data.password,
+        data.rut,
+      )
+      router.push('/login')
+    } catch (error) {
+      setError('Error al registrar')
+      console.error(error)
+    } finally {
+      setLoading(false)
+    }
   }
+
+  //TODO: Check and add validations
 
   return (
     <div className="flex h-full flex-col items-center justify-center">
@@ -45,7 +67,7 @@ const SignUpForm: React.FC = () => {
             Nombre
           </label>
           <input
-            {...register('name', { required: true })}
+            {...register('name', { required: true, minLength: 2 })}
             type="text"
             name="name"
             id="name"
@@ -134,6 +156,8 @@ const SignUpForm: React.FC = () => {
           )}
         </div>
 
+        {error && <Error message={error} />}
+
         <button
           type="submit"
           className="mt-4 w-full bg-orange-base p-2 text-sm font-semibold text-white"
@@ -141,6 +165,7 @@ const SignUpForm: React.FC = () => {
           Registrar
         </button>
       </form>
+      {loading && <Loading />}
     </div>
   )
 }
