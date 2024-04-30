@@ -48,7 +48,13 @@ const LoginForm: React.FC = () => {
 
   return (
     <div className="flex h-full flex-col items-center justify-start">
-      <Image src="/img/ucn-logo.png" alt="UCN Logo" width={160} height={100} />
+      <Image
+        className="h-auto w-auto"
+        src="/img/ucn-logo.png"
+        alt="UCN Logo"
+        width={160}
+        height={100}
+      />
 
       <h1 className="mb-8 mt-14 flex text-3xl font-semibold text-grey-base">
         Acceder

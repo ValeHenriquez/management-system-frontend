@@ -12,10 +12,10 @@ const Login = () => {
         <Image
           src="/img/ucn-bg.png"
           alt="ucn-background"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          className="h-full w-full"
+          fill
+          priority
+          sizes="100vw 100vh"
+          className="h-full w-full object-cover"
         />
         <div className="z-50 flex h-screen flex-col items-center justify-center">
           <span className="flex w-3/5 pb-6 text-center text-3xl font-bold text-white drop-shadow-xl  sm:text-3xl md:text-4xl">
