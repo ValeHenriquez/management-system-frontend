@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import RedirectButtons from '@/components/RedirectButtons'
+import ServerWrapper from '@/components/ServerWrapper'
 
 //TODO: Add necessary buttons to redirect to other pages
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
       />
       <div className="absolute left-0 top-0 z-50 flex h-full w-full items-center justify-center ">
         <div className="w-4/5 rounded-lg bg-white p-8 shadow-lg sm:w-3/5 md:w-3/5 lg:w-2/5">
-          <RedirectButtons />
+          <ServerWrapper/>
         </div>
       </div>
     </div>
