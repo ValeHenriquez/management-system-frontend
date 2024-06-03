@@ -18,7 +18,7 @@ const tokenHandler = {
 
   retrieveToken: () => {
     const token = cookies().get('token')
-    return token
+    return token?.value
   },
 
   //TODO: Implement removeToken in a logout() function 
