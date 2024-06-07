@@ -8,7 +8,8 @@ import Link from 'next/link'
 const grupo1URL = process.env.GRUPO1_FRONT_URL || 'http://localhost:3000/'
 const grupo2URL = process.env.GRUPO2_FRONT_URL || 'http://localhost:3000/'
 const grupo3URL = process.env.GRUPO3_FRONT_URL || 'http://localhost:3000/'
-const grupo4URL = process.env.GRUPO4_FRONT_URL || 'http://localhost:3000/'
+const grupo4URL =
+  process.env.NEXT_PUBLIC_GRUPO4_FRONT_URL || 'http://localhost:3000/'
 const grupo5URL = process.env.GRUPO5_FRONT_URL || 'http://localhost:3000/'
 
 interface RedirectButtonsProps {
@@ -34,30 +35,20 @@ const RedirectButtons: React.FC<RedirectButtonsProps> = ({ token }) => {
       <h1 className="mb-8 flex text-2xl font-semibold text-grey-base">
         Redireccionamiento a página de grupos
       </h1>
-      <div className="flex flex-col pb-4 w-full">
-        <button
-          className="mt-4 w-full bg-orange-base p-2 mb-5 text-sm font-semibold text-white"
-        >
+      <div className="flex w-full flex-col pb-4">
+        <button className="mb-5 mt-4 w-full bg-orange-base p-2 text-sm font-semibold text-white">
           <Link href={grupo1URL}>Grupo 1</Link>
         </button>
-        <button
-          className="mt-4 w-full bg-orange-base p-2 mb-5 text-sm font-semibold text-white"
-        >
+        <button className="mb-5 mt-4 w-full bg-orange-base p-2 text-sm font-semibold text-white">
           <Link href={grupo1URL}>Grupo 2</Link>
         </button>
-        <button
-          className="mt-4 w-full bg-orange-base p-2 mb-5 text-sm font-semibold text-white"
-        >
+        <button className="mb-5 mt-4 w-full bg-orange-base p-2 text-sm font-semibold text-white">
           <Link href={`${grupo3URL}?token=${token}`}>Grupo 3</Link>
         </button>
-        <button
-          className="mt-4 w-full bg-orange-base p-2 mb-5 text-sm font-semibold text-white"
-        >
-          <Link href={grupo1URL}>Grupo 4</Link>
+        <button className="mb-5 mt-4 w-full bg-orange-base p-2 text-sm font-semibold text-white">
+          <Link href={`${grupo4URL}?token=${token}`}>Grupo 4</Link>
         </button>
-        <button
-          className="mt-4 w-full bg-orange-base p-2 mb-5 text-sm font-semibold text-white"
-        >
+        <button className="mb-5 mt-4 w-full bg-orange-base p-2 text-sm font-semibold text-white">
           <Link href={grupo1URL}>Grupo 5</Link>
         </button>
         {loading && <Loading />}
