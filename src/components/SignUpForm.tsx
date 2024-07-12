@@ -68,7 +68,7 @@ const SignUpForm: React.FC = () => {
             {...register('firstName', { required: true, minLength: 2 })}
             type="text"
             name="name"
-            id="name"
+            id="firstName"
             className="rounded-lg border border-black p-2"
           />
           {errors.firstName && (
