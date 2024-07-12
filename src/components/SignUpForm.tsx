@@ -67,7 +67,7 @@ const SignUpForm: React.FC = () => {
           <input
             {...register('firstName', { required: true, minLength: 2 })}
             type="text"
-            name="name"
+            name="firstName"
             id="firstName"
             className="rounded-lg border border-black p-2"
           />
