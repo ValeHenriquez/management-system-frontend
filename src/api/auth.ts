@@ -14,14 +14,14 @@ export const login = async (email: string, password: string) => {
 }
 
 export const signup = async (
-  name: string,
+  firstName: string,
   lastName: string,
   email: string,
   password: string,
   rut: string,
 ) => {
   const response = await axios.post(`${baseURL}/auth/signup`, {
-    name,
+    firstName,
     lastName,
     email,
     password,
