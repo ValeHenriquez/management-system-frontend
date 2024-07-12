@@ -7,7 +7,7 @@ import Error from './basics/Error'
 import Loading from './basics/Loading'
 
 type RegisterFormProps = {
-  name: string
+  firstName: string
   lastName: string
   email: string
   password: string
@@ -30,7 +30,7 @@ const SignUpForm: React.FC = () => {
     setLoading(true)
     try {
       await signup(
-        data.name,
+        data.firstName,
         data.lastName,
         data.email,
         data.password,
@@ -44,9 +44,7 @@ const SignUpForm: React.FC = () => {
       setLoading(false)
     }
   }
-
-  //TODO: Check and add validations
-
+  
   return (
     <div className="flex h-full flex-col items-center justify-center">
       <div className="relative h-full w-full">
@@ -63,17 +61,17 @@ const SignUpForm: React.FC = () => {
       </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full">
         <div className="flex flex-col pb-4">
-          <label htmlFor="name" className="text-sm  text-grey-base/50">
+          <label htmlFor="firstName" className="text-sm  text-grey-base/50">
             Nombre
           </label>
           <input
-            {...register('name', { required: true, minLength: 2 })}
+            {...register('firstName', { required: true, minLength: 2 })}
             type="text"
             name="name"
             id="name"
             className="rounded-lg border border-black p-2"
           />
-          {errors.name && (
+          {errors.firstName && (
             <span className="text-sm text-red-500">
               Este campo es requerido
             </span>
